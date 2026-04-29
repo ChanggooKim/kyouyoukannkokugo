@@ -491,7 +491,7 @@ document.querySelectorAll('.lesson-btn').forEach((btn,i)=>{
 
 // 음절: TTS / 단어: mp3 (없으면 TTS 폴백)
 function speakWord(text, lesson){
-  const path=`audio/${lesson}_w_${text}.mp3`;
+  const path=`${lesson}_w_${text}.mp3`;
   const audio=new Audio(path);
   audio.onerror=()=>ttsSpeak(text);
   audio.play().catch(()=>ttsSpeak(text));
